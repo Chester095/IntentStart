@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static String number = "PARAM";
+    private final static String TEXT = "PARAM";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Uri uri = Uri.parse("example://intent");
                 Intent runEchoIntent = new Intent(Intent.ACTION_VIEW, uri);
-                runEchoIntent.putExtra(number, text.getText().toString());
+                runEchoIntent.putExtra(TEXT, text.getText().toString());
                 ActivityInfo activityInfo = runEchoIntent.resolveActivityInfo(getPackageManager(),
                         runEchoIntent.getFlags());
                 if (activityInfo != null) {
